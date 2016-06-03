@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtractData\FileReader.cs" />
+    <Compile Include="Problem12.cs" />
     <Compile Include="Problem6.cs" />
     <Compile Include="Problem11.cs" />
     <Compile Include="Problem9.cs" />
