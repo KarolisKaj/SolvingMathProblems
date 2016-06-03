@@ -26,18 +26,17 @@
         {
             decimal result = 0M;
             Int64 currentValue = 0;
-            Int64 previousValue = 0;
             Int64 counter = 0;
             while (true)
             {
-                currentValue = previousValue + counter;
+                currentValue += counter;
 
-
-
-
-                previousValue = currentValue;
+                if (GetAmountOfDevisors(currentValue) > 500)
+                {
+                    result = currentValue;
+                    break;
+                }
                 counter++;
-                break;
             }
 
             return result;
