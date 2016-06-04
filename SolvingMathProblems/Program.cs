@@ -5,7 +5,7 @@
     {
         static void Main()
         {
-            Console.WriteLine(Problem12.Answer());
+            Console.WriteLine(Problem13.Answer());
             Console.ReadLine();
         }
     }

@@ -21,7 +21,6 @@
         /// What is the value of the first triangle number to have over five hundred divisors?
         /// <returns></returns>
 
-        private static string _numbersSequence = FileReader.ReadData("Problem11Data.txt");
         public static decimal Answer()
         {
             decimal result = 0M;

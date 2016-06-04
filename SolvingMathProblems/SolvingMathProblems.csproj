@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtractData\FileReader.cs" />
+    <Compile Include="Problem13.cs" />
     <Compile Include="Problem12.cs" />
     <Compile Include="Problem6.cs" />
     <Compile Include="Problem11.cs" />
@@ -63,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ProblemData\Problem11Data.txt" />
+    <Content Include="ProblemData\Problem13Data.txt" />
     <Content Include="ProblemData\Problem8Data.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
