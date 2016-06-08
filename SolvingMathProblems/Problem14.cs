@@ -1,10 +1,6 @@
 ﻿namespace SolvingMathProblems
 {
-    using ExtractData;
-    using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Numerics;
     static internal class Problem14
     {
         /// <summary>
