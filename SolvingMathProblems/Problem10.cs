@@ -13,7 +13,7 @@
         public static decimal Answer()
         {
             decimal result = 0M;
-            var primalNumbers = AlteredNo7();
+            var primalNumbers = AlteredNo();
 
             for (int i = 2; i < primalNumbers.Length; i++)
             {
@@ -23,7 +23,7 @@
             return result;
         }
 
-        public static bool[] AlteredNo7()
+        public static bool[] AlteredNo()
         {
 
             decimal result = 0M;

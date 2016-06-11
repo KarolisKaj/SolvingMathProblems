@@ -19,7 +19,7 @@
             decimal tempResult = 0M;
             var grid = GetGrid();
 
-            //  Horizontal line.
+            // Horizontal line.
             for (int i = 0; i < 20; i++)
             {
                 for (int j = 0; j < 17; j++)
@@ -30,7 +30,7 @@
                 }
             }
 
-            // Verical line.
+            // Vertical line.
             for (int j = 0; j < 17; j++)
             {
                 for (int i = 0; i < 20; i++)
@@ -79,7 +79,6 @@
                         if (tempResult > result)
                             result = tempResult;
                     }
-
                 }
             }
 
