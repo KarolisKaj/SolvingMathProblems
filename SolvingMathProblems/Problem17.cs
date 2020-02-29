@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SolvingMathProblems
@@ -19,20 +20,15 @@ namespace SolvingMathProblems
                 {
                     result += "onethousand".Length;
                 }
-                if (i - 100 >= 0)
+                else if (i - 100 >= 0)
                 {
-                    result += Problem17Helper.GetTextRepresentationOfSingleNumber(i.ToString()[0]).Length + 4;
+                    result += Problem17Helper.GetTextRepresentationOfSingleNumber(i.ToString()[0]).Length + 7;
                     if (i % 100 != 0)
                         result += 3;
                 }
-                if ((i % 100) - 10 >= 0)
+                if ((i % 100) != 0)
                 {
-                    result += Problem17Helper.GetTextOfTenths((i % 100).ToString()[0]).Length;
-                    if ((i % 10) != 0) result++;
-                }
-                if ((i % 10) != 0)
-                {
-                    result += Problem17Helper.GetTextRepresentationOfSingleNumber(i.ToString().Last()).Length;
+                    result += Problem17Helper.GetTextOfTenths((i % 100).ToString()).Length;
                 }
             }
             return result;
@@ -71,34 +67,64 @@ namespace SolvingMathProblems
             }
         }
 
-        public static string GetTextOfTenths(char text)
+        public static string GetTextOfTenths(string text)
         {
-            switch (Convert.ToInt16(text.ToString()))
+            var number = Convert.ToInt16(text.ToString());
+            if (number < 10) return GetTextRepresentationOfSingleNumber(text[0]);
+            if (number > 9 && number < 20) return GetTenToNineteen(text);
+            var lastNumber = string.Empty;
+            if (number % 10 != 0) lastNumber = GetTextRepresentationOfSingleNumber((number % 10).ToString()[0]);
+            switch (number - (number % 10))
             {
-                case 1:
+                case 10:
                     return "Ten";
-                case 2:
-                    return "Twenty";
-                case 3:
-                    return "Thirty";
-                case 4:
-                    return "Forty";
-                case 5:
-                    return "Fifty";
-                case 6:
-                    return "Sixty";
-                case 7:
-                    return "Seventy";
-                case 8:
-                    return "Eighty";
-                case 9:
-                    return "Ninety";
-                case 0:
-                    return String.Empty;
+                case 20:
+                    return lastNumber + "Twenty";
+                case 30:
+                    return lastNumber + "Thirty";
+                case 40:
+                    return lastNumber + "Forty";
+                case 50:
+                    return lastNumber + "Fifty";
+                case 60:
+                    return lastNumber + "Sixty";
+                case 70:
+                    return lastNumber + "Seventy";
+                case 80:
+                    return lastNumber + "Eighty";
+                case 90:
+                    return lastNumber + "Ninety";
                 default:
                     return String.Empty;
             }
         }
-
+        public static string GetTenToNineteen(string text)
+        {
+            switch (Convert.ToInt16(text.ToString()))
+            {
+                case 10:
+                    return "Ten";
+                case 11:
+                    return "Eleven";
+                case 12:
+                    return "Twelve";
+                case 13:
+                    return "Thirteen";
+                case 14:
+                    return "Fourteen";
+                case 15:
+                    return "Fifteen";
+                case 16:
+                    return "Sixteen";
+                case 17:
+                    return "Seventeen";
+                case 18:
+                    return "Eighteen";
+                case 19:
+                    return "Nineteen";
+                default:
+                    return String.Empty;
+            }
+        }
     }
 }
